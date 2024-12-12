@@ -1,0 +1,27 @@
+{
+  "name": "agencyproject",
+  "version": "1.0.0",
+  "description": "agency project nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start":"nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozgekrby/AgencyProject.git"
+  },
+  "keywords": [
+    "agency",
+    "nodejs"
+  ],
+  "author": "Özge Karabay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozgekrby/AgencyProject/issues"
+  },
+  "homepage": "https://github.com/ozgekrby/AgencyProject#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.7"
+  }
+}
