@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 const mongoose=require("mongoose");
-
+const portfolioRoutes = require("./routes/portfolioRoutes");
+const bodyParser = require("body-parser");
 //TEMPLATE ENGINE
 app.set("view engine","ejs")
 //Middlewares
 app.use(express.static("public"))
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 // Connect DB
 const connectWithRetry = async () => {
@@ -21,11 +23,7 @@ const connectWithRetry = async () => {
 
 connectWithRetry();
 //Routes
-app.get("/", (req, res) => {
-    res.status(200).render("index",{
-        page_name:"index"
-      })
-});
+app.use("/", portfolioRoutes);
 const port = 3000;
 app.listen(port, () => {
   console.log(`App started on port ${port}`);
