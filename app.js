@@ -1,13 +1,16 @@
 const express = require("express");
 const app = express();
+const fileUpload = require('express-fileupload');
 const mongoose=require("mongoose");
 const portfolioRoutes = require("./routes/portfolioRoutes");
+const pageRoutes = require("./routes/pageRoutes");
 const bodyParser = require("body-parser");
 //TEMPLATE ENGINE
 app.set("view engine","ejs")
 //Middlewares
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(fileUpload());
 
 // Connect DB
 const connectWithRetry = async () => {
@@ -23,7 +26,9 @@ const connectWithRetry = async () => {
 
 connectWithRetry();
 //Routes
-app.use("/", portfolioRoutes);
+
+app.use("/", pageRoutes);
+app.use("/portfolio", portfolioRoutes);
 const port = 3000;
 app.listen(port, () => {
   console.log(`App started on port ${port}`);

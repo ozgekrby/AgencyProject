@@ -3,10 +3,9 @@ const { getAllPortfolios, getPortfolio, createPortfolio, updatePortfolio, delete
 const router = express.Router();
 
 router.get('/', getAllPortfolios);
-router.get('/portfolios/create', (req, res) => res.render('add'));
-router.get('/portfolios/:id', getPortfolio);
-router.post('/portfolios', createPortfolio);
-router.put('/portfolios/:id', updatePortfolio);
-router.delete('/portfolios/:id', deletePortfolio);
+router.get('/:id', getPortfolio);
+router.post('/create', createPortfolio);
+router.put('/:id', updatePortfolio);
+router.delete('/:id', deletePortfolio);
 
 module.exports = router;

@@ -1,0 +1,38 @@
+<%- include("partials/_header"); %>
+<%- include("partials/_navigation"); %>
+
+<!-- Add Portfolio Form -->
+<div class="container my-5">
+    <form id="addPortfolioForm" action="/portfolio/create" method="POST" enctype="multipart/form-data">
+        <div class="row align-items-stretch mb-5">
+            <div class="row-md-6">
+                <div class="form-group mb-3">
+                    <!-- Project Name input-->
+                    <input class="form-control" id="title" name="title" type="text" placeholder="Title *" required />
+                </div>
+            </div>
+            <div class="row-md-6">
+                <div class="form-group mb-3">
+                    <!-- Description input-->
+                    <textarea class="form-control" id="description" name="description" placeholder="Description *" required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Image Input-->
+        <div class="form-group mb-3">
+            <label for="image">Image</label>
+            <input class="form-control" id="image" name="image" type="file" accept="image/*" />
+        </div>
+
+        <!-- Submit Button-->
+        <div class="text-center">
+            <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Add Portfolio Item</button>
+        </div>
+    </form>
+</div>
+
+<%- include("partials/_footer"); %>
+
+</body>
+</html>
