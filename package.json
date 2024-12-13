@@ -4,7 +4,7 @@
   "description": "agency project nodejs",
   "main": "app.js",
   "scripts": {
-    "start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ozgekrby/AgencyProject#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
     "nodemon": "^3.1.7"
   }
