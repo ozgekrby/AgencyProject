@@ -6,6 +6,7 @@ const mongoose=require("mongoose");
 const portfolioRoutes = require("./routes/portfolioRoutes");
 const pageRoutes = require("./routes/pageRoutes");
 const bodyParser = require("body-parser");
+
 //TEMPLATE ENGINE
 app.set("view engine","ejs")
 //Middlewares

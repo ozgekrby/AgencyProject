@@ -21,11 +21,14 @@
   },
   "homepage": "https://github.com/ozgekrby/AgencyProject#readme",
   "dependencies": {
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "express-fileupload": "^1.5.1",
     "method-override": "^3.0.0",
     "mongoose": "^8.8.4",
+    "nodemailer": "^6.9.16",
     "nodemon": "^3.1.7"
   }
 }
