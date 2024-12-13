@@ -20,7 +20,7 @@ exports.getPortfolio = async (req, res) => {
     if (!portfolio) {
       return res.status(404).json({ message: 'Portfolio not found' });
     }
-    res.status(200).render('portfolio', { portfolio });
+    res.status(200).render('portfolio', { portfolio, page_name:"portfolio" });
   } catch (error) {
     console.error('Error fetching portfolio:', error);
     res.status(500).json({ message: 'Server Error' });

@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const fileUpload = require('express-fileupload');
+const methodOverride = require('method-override')
 const mongoose=require("mongoose");
 const portfolioRoutes = require("./routes/portfolioRoutes");
 const pageRoutes = require("./routes/pageRoutes");
@@ -11,7 +12,9 @@ app.set("view engine","ejs")
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(fileUpload());
-
+app.use(methodOverride('_method',{
+  methods:["POST","GET"]
+}))
 // Connect DB
 const connectWithRetry = async () => {
   try {
